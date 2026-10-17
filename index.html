@@ -1,290 +1,468 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>مركز أكتوبر للتكييف — 70 Logo Concepts (AC Elements)</title>
+<title>مركز أكتوبر للتكييف</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="صيانة وتركيب وتوريد وتأسيس مواسير التكييف - خدمات تكييف شاملة ومتكاملة">
+<meta name="theme-color" content="#1F4E45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0F172A;color:#E2E8F0;font-family:'Cairo','Tajawal','Segoe UI',Tahoma,'Noto Naskh Arabic',sans-serif;min-height:100vh}
-header{text-align:center;padding:48px 20px 24px}
-header h1{font-size:clamp(24px,4vw,40px);font-weight:700;color:#F8FAFC;letter-spacing:0}
-header p{margin-top:10px;color:#94A3B8;font-size:15px}
-header .pillars{margin-top:14px;display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
-header .pillars span{border:1px solid #B08D57;color:#D9B87A;border-radius:999px;padding:4px 16px;font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1700px;margin:0 auto;padding:24px 28px 64px}
-@media(max-width:1400px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.grid{grid-template-columns:1fr;padding:16px}}
-.card{background:#1E293B;border:1px solid #334155;border-radius:16px;padding:16px;cursor:zoom-in;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:12px}
-.card:hover,.card:focus-visible{transform:translateY(-4px);border-color:#B08D57;box-shadow:0 14px 34px rgba(0,0,0,.4);outline:none}
-.meta{display:flex;align-items:flex-start;gap:12px;min-height:58px}
-.num{flex:0 0 auto;min-width:44px;height:44px;border-radius:12px;background:#B08D57;color:#0F172A;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;direction:ltr}
-.txt h2{font-size:14px;color:#F8FAFC;font-weight:700}
-.txt p{font-size:13.5px;line-height:1.7;color:#CBD5E1}
-.art svg{width:100%;height:auto;display:block;border-radius:12px}
-#modal{position:fixed;inset:0;background:rgba(2,6,23,.96);z-index:100;display:none;flex-direction:column}
-#modal.open{display:flex}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:#0B1220;border-bottom:1px solid #334155;flex-wrap:wrap}
-.bar .cap{color:#E2E8F0;font-size:15px;font-weight:600}
-.btns{display:flex;gap:8px;flex-wrap:wrap;direction:ltr}
-.btns button{background:#1E293B;color:#F8FAFC;border:1px solid #475569;border-radius:10px;padding:9px 16px;font-size:14px;cursor:pointer;font-family:inherit;transition:background .15s,border-color .15s}
-.btns button:hover{background:#334155;border-color:#B08D57}
-.btns button.close{background:#7F1D1D;border-color:#B91C1C}
-.btns button.close:hover{background:#B91C1C}
-#viewport{flex:1;position:relative;overflow:hidden;cursor:grab;touch-action:none;display:flex;align-items:center;justify-content:center;user-select:none}
-#viewport.drag{cursor:grabbing}
-#stage{width:min(78vh,92vw);transform-origin:center center;will-change:transform}
-#stage svg{width:100%;height:auto;display:block;border-radius:16px;pointer-events:none}
-.hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:12px;color:#64748B;pointer-events:none;direction:ltr}
-#zl{color:#94A3B8;font-size:13px;min-width:52px;text-align:center;align-self:center}
+/* التصميم: صفحة واحدة بسيطة بهوية المركز. هيرو أخضر، أقسام كريمي، لمسات ذهبية. */
+:root{
+  --bg:#F3F0E8; --surface:#FBF9F4; --card:#E9E3D3;
+  --ink:#1F4E45; --text:#2b3834; --muted:#5f6258;
+  --brand:#1F4E45; --brand-ink:#F3F0E8; --brand-deep:#173d36;
+  --gold:#B08D57; --gold-text:#7F602C; --gold-on-brand:#D6B77F;
+  --cta-bg:#1F4E45; --cta-ink:#F3F0E8;
+  --line:rgba(31,78,69,.18);
+  --font:"Cairo","Tajawal","Segoe UI",Tahoma,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1f1b; --surface:#142923; --card:#1b3430;
+    --ink:#F3F0E8; --text:#e3e0d6; --muted:#9db0aa;
+    --brand:#1F4E45; --brand-deep:#173d36;
+    --gold:#C9A56B; --gold-text:#D6B77F;
+    --cta-bg:#D6B77F; --cta-ink:#0e1f1b;
+    --line:rgba(243,240,232,.16); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1f1b; --surface:#142923; --card:#1b3430;
+  --ink:#F3F0E8; --text:#e3e0d6; --muted:#9db0aa;
+  --brand:#1F4E45; --brand-deep:#173d36;
+  --gold:#C9A56B; --gold-text:#D6B77F;
+  --cta-bg:#D6B77F; --cta-ink:#0e1f1b;
+  --line:rgba(243,240,232,.16); color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.8;
+  overflow-x:clip}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{color:var(--ink);text-wrap:balance;line-height:1.35}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:100%}
+header.top,.hero,section.sec,footer.foot{padding-left:max(16px,env(safe-area-inset-left,0px),calc((100% - 1120px)/2));padding-right:max(16px,env(safe-area-inset-right,0px),calc((100% - 1120px)/2))}
+
+/* ───── الهيدر ───── */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line);
+  }
+header.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.15rem;white-space:nowrap}
+.brand svg{width:34px;height:40px;flex:none}
+nav.menu{display:flex;gap:6px;margin-inline-start:auto}
+nav.menu a{text-decoration:none;font-weight:700;font-size:.98rem;padding:8px 14px;border-radius:999px;color:var(--ink)}
+nav.menu a:hover{background:var(--card)}
+.top .btn{margin-inline-start:0}
+@media (max-width:820px){nav.menu{display:none}.top .btn{margin-inline-start:auto}}
+
+/* ───── الأزرار ───── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:999px;font:700 1rem/1.4 var(--font);
+  text-decoration:none;border:2px solid var(--cta-bg);background:var(--cta-bg);color:var(--cta-ink);cursor:pointer;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn.lg{padding:15px 30px;font-size:1.1rem}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ───── الهيرو ───── */
+.hero{background:var(--brand);color:var(--brand-ink);position:relative;padding-block:56px 84px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto 0 0;height:60px;opacity:.12;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60'%3E%3Cpath d='M0 20 q20-20 40 0 t40 0 M0 44 q20-20 40 0 t40 0' fill='none' stroke='%23F3F0E8' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;background-size:80px 60px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+.eyebrow{display:inline-block;color:var(--gold-on-brand);font-weight:700;letter-spacing:.32em;font-size:.82rem;margin-bottom:14px;padding-inline-start:.32em}
+.hero h1{color:var(--brand-ink);font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:900}
+.hero h1 em{font-style:normal;color:var(--gold-on-brand)}
+.hero p.lead{margin-top:18px;font-size:1.15rem;max-width:34em;color:rgba(243,240,232,.9)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .btn{background:var(--brand-ink);border-color:var(--brand-ink);color:var(--brand)}
+.hero .btn.ghost{background:transparent;color:var(--brand-ink);border-color:rgba(243,240,232,.7)}
+.hero .btn.ghost:hover{background:var(--brand-ink);color:var(--brand)}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hero .chips span{border:1px solid rgba(243,240,232,.35);border-radius:999px;padding:4px 14px;font-weight:600;font-size:.92rem}
+.hero-art{background:#F3F0E8;border-radius:36px;padding:34px 28px 26px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.hero-art svg.logo{width:min(200px,60%);height:auto}
+.hero-art .nm{color:#1F4E45;font-weight:800;font-size:1.6rem;margin-top:10px;line-height:1.3}
+.hero-art .rule{width:44px;height:4px;border-radius:4px;background:#B08D57;margin:10px auto 6px}
+.hero-art .en{color:#7F602C;letter-spacing:.34em;font-size:.76rem;font-weight:700;padding-inline-start:.34em}
+@media (max-width:820px){.hero{padding-block:36px 64px}.hero .wrap{grid-template-columns:1fr;gap:34px}.hero-art{max-width:340px;margin-inline:auto;width:100%}}
+
+/* ───── الأقسام ───── */
+section.sec{padding-block:72px}
+.sec-head{max-width:640px;margin-bottom:34px}
+.sec-head .kicker{color:var(--gold-text);font-weight:800;font-size:.95rem;margin-bottom:6px}
+.sec-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:900}
+.sec-head p{margin-top:10px;color:var(--muted)}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+
+/* الخدمات */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid4{grid-template-columns:1fr}}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px 22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.svc .ic{width:56px;height:56px;border-radius:16px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center}
+.svc .ic svg{width:30px;height:30px}
+.svc h3{font-size:1.3rem;font-weight:800}
+.svc p{color:var(--muted);font-size:.98rem;line-height:1.75}
+.svc ul{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:6px;font-size:.95rem}
+.svc li{display:flex;gap:8px;align-items:flex-start}
+.svc li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:.7em}
+.more{margin-top:18px;background:var(--brand);color:var(--brand-ink);border-radius:22px;padding:20px 26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.more strong{font-size:1.15rem;font-weight:800}
+.more .btn{background:var(--brand-ink);border-color:var(--brand-ink);color:var(--brand)}
+
+/* لماذا نحن */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface)}
+.why div{padding:26px 22px;border-inline-start:1px solid var(--line);min-width:0}
+.why div:first-child{border-inline-start:0}
+.why h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+.why p{color:var(--muted);font-size:.95rem;line-height:1.7}
+@media (max-width:980px){.why{grid-template-columns:repeat(2,1fr)}.why div:nth-child(3){border-inline-start:0}.why div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:560px){.why{grid-template-columns:1fr}.why div{border-inline-start:0;border-top:1px solid var(--line)}.why div:first-child{border-top:0}}
+
+/* الخطوات */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s;list-style:none;padding:0;margin:0}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;background:var(--card);border-radius:22px;padding:24px 22px;position:relative;min-width:0}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;margin-bottom:12px}
+.steps h3{font-size:1.1rem;font-weight:800;margin-bottom:4px}
+.steps p{color:var(--muted);font-size:.95rem;line-height:1.7}
+
+/* الطلب */
+.req{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+@media (max-width:820px){.req{grid-template-columns:1fr;gap:24px}}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px;display:grid;gap:14px}
+.form label{display:grid;gap:6px;font-weight:700;color:var(--ink);font-size:.95rem}
+.form input,.form select,.form textarea{font:500 1rem var(--font);color:var(--text);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;width:100%;min-width:0}
+.form textarea{min-height:92px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:3px solid var(--gold);outline-offset:1px;border-color:transparent}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.form .row{grid-template-columns:1fr}}
+.form small{color:var(--muted)}
+
+/* الأسئلة */
+.faq{display:grid;gap:12px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;font-weight:800;color:var(--ink);padding:18px 0;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding-bottom:18px;color:var(--muted)}
+
+/* التواصل */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;min-width:0}
+.card h3{font-size:1.25rem;font-weight:800;margin-bottom:14px}
+.phone-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line)}
+.phone-row:first-of-type{border-top:0}
+.num{direction:ltr;unicode-bidi:isolate;font-weight:800;font-size:1.35rem;color:var(--ink);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.info{display:grid;gap:12px;margin-top:6px}
+.info p{display:flex;gap:10px}
+.info b{color:var(--ink);flex:none}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.socials a{padding:8px 18px;border:1.5px solid var(--ink);border-radius:999px;font-weight:700;text-decoration:none;color:var(--ink)}
+.socials a:hover{background:var(--ink);color:var(--bg)}
+
+/* الفوتر */
+footer.foot{background:var(--brand-deep);color:var(--brand-ink);padding-block:34px calc(96px + env(safe-area-inset-bottom,0px))}
+footer.foot{display:grid;gap:26px}
+.soc-row{display:grid;gap:14px;justify-items:center;text-align:center;padding-bottom:26px;border-bottom:1px solid rgba(243,240,232,.18)}
+.soc-title{font-weight:800;font-size:1.1rem;color:var(--brand-ink)}
+.soc-icons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.soc-icons a,.soc-icons span{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(243,240,232,.45);color:var(--brand-ink);text-decoration:none;transition:background .15s,color .15s,border-color .15s,transform .15s}
+.soc-icons a:hover,.soc-icons a:focus-visible{background:#D6B77F;border-color:#D6B77F;color:#173d36;transform:translateY(-2px)}
+.soc-icons span{opacity:.4;cursor:default}
+.soc-icons svg{width:24px;height:24px}
+footer.foot .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+footer.foot .brand{color:var(--brand-ink)}
+footer.foot small{opacity:.8}
+
+/* زرار واتساب عائم */
+.fab{position:fixed;inset-inline-start:max(16px,env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:inline-flex;align-items:center;gap:8px;
+  padding:13px 20px;border-radius:999px;background:var(--cta-bg);color:var(--cta-ink);font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.fab svg{width:22px;height:22px}
+@media (max-width:560px){.fab span{display:none}.fab{padding:14px}}
 </style>
 </head>
 <body>
-<header>
-  <h1>مركز أكتوبر للتكييف — 70 مقترح شعار بعناصر التكييف</h1>
-  <p>Comprehensive AC services · Maintenance · Installation · System Setup · Sales</p>
-  <div class="pillars"><span>الفخامة</span><span>الاستدامة</span><span>الأمان</span></div>
-</header>
-<main class="grid" id="grid"></main>
+<div dir="rtl" lang="ar" id="app">
 
-<div id="modal" role="dialog" aria-modal="true">
-  <div class="bar">
-    <div class="cap" id="cap"></div>
-    <div class="btns">
-      <button id="zin">Zoom In (+)</button>
-      <button id="zout">Zoom Out (-)</button>
-      <button id="zreset">Reset Zoom</button>
-      <span id="zl">100%</span>
-      <button class="close" id="zclose">Close (X)</button>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="مركز أكتوبر للتكييف">
+      <svg data-logo viewBox="-176 -12 352 420" aria-hidden="true"></svg>
+      <span data-name></span>
+    </a>
+    <nav class="menu" aria-label="التنقل">
+      <a href="#services">الخدمات</a><a href="#why">لماذا نحن</a><a href="#steps">خطوات العمل</a><a href="#request">اطلب خدمتك</a><a href="#faq">أسئلة شائعة</a><a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="btn" data-wa href="#" target="_blank" rel="noopener">احجز الآن</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-en></span>
+      <h1 data-hero-title></h1>
+      <p class="lead" data-hero-sub></p>
+      <div class="cta">
+        <a class="btn lg" data-wa href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.2-.4.700-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.300 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4.100c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3z"/></svg>
+          احجز على واتساب</a>
+        <a class="btn lg ghost" data-call href="#" >اتصل الآن</a>
+      </div>
+      <div class="chips" data-chips></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg class="logo" data-logo viewBox="-176 -12 352 420"></svg>
+      <div class="nm" data-name></div>
+      <div class="rule"></div>
+      <div class="en" data-en></div>
     </div>
   </div>
-  <div id="viewport"><div id="stage"></div><div class="hint">Mouse wheel = zoom · Drag = pan · Esc = close</div></div>
+</section>
+
+<section class="sec" id="services">
+  <div class="sec-head"><div class="kicker">خدماتنا</div><h2>كل ما يحتاجه تكييفك في مكان واحد</h2><p>من تأسيس المواسير قبل التشطيب لحد الصيانة بعد التشغيل.</p></div>
+  <div class="grid4" data-services></div>
+  <div class="more"><strong>محتاج خدمة تانية في التكييف؟ كلمنا وهنفيدك.</strong><a class="btn" data-wa href="#" target="_blank" rel="noopener">اسأل على واتساب</a></div>
+</section>
+
+<section class="sec alt" id="why">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">لماذا مركز أكتوبر</div><h2>خدمة شاملة وتعامل واضح</h2></div>
+    <div class="why" data-why></div>
+  </div>
+</section>
+
+<section class="sec" id="steps">
+  <div class="sec-head"><div class="kicker">خطوات العمل</div><h2>إزاي بنخدمك؟</h2><p>أربع خطوات بسيطة من أول مكالمة لحد التنفيذ.</p></div>
+  <ol class="steps" data-steps></ol>
+</section>
+
+<section class="sec alt" id="request">
+  <div class="wrap req">
+    <div class="sec-head" style="margin:0"><div class="kicker">اطلب خدمتك</div><h2>اكتب طلبك وهيوصلنا على واتساب</h2><p>املأ البيانات دي واضغط الزرار، هتفتح لك رسالة جاهزة على واتساب نستلمها ونرد عليك.</p></div>
+    <form class="form" id="reqForm" onsubmit="return false">
+      <div class="row">
+        <label for="fName">الاسم<input id="fName" type="text" autocomplete="name" placeholder="اسمك"></label>
+        <label for="fSvc">الخدمة المطلوبة<select id="fSvc"></select></label>
+      </div>
+      <label for="fArea">المنطقة / العنوان<input id="fArea" type="text" autocomplete="street-address" placeholder="مثال: الحي والشارع"></label>
+      <label for="fNote">تفاصيل إضافية (اختياري)<textarea id="fNote" placeholder="نوع التكييف، المشكلة، عدد الوحدات..."></textarea></label>
+      <a class="btn lg" id="fSend" data-wa href="#" target="_blank" rel="noopener">إرسال الطلب على واتساب</a>
+      <small>الطلب بيتفتح كرسالة جاهزة على واتساب، ولازم تضغط إرسال من هناك.</small>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="sec-head"><div class="kicker">أسئلة شائعة</div><h2>إجابات سريعة</h2></div>
+  <div class="faq" data-faq></div>
+</section>
+
+<section class="sec alt" id="contact">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">تواصل معنا</div><h2>إحنا في خدمتك</h2></div>
+    <div class="contact">
+      <div class="card"><h3>أرقام التواصل</h3><div data-phones></div></div>
+      <div class="card"><h3>بيانات المركز</h3><div class="info" data-info></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="soc-row">
+    <p class="soc-title">تابعنا على</p>
+    <div class="soc-icons" data-foot-socials></div>
+  </div>
+  <div class="wrap">
+    <a class="brand" href="#top"><svg data-logo viewBox="-176 -12 352 420" aria-hidden="true"></svg><span data-name></span></a>
+    <small>© <span data-year></span> <span data-name></span> — جميع الحقوق محفوظة</small>
+  </div>
+</footer>
+
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="واتساب">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.2-.4.700-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.300 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4.100c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3z"/></svg>
+  <span>واتساب</span>
+</a>
 </div>
 
+<!-- ╔═══════════════════════════════════════════════════════════════════╗
+     ║  🟢 كل بيانات الموقع هنا — عدّل من هنا بس، ومتلمسش اللي تحت       ║
+     ╠═══════════════════════════════════════════════════════════════════╣
+     ║  • أي نص بين علامتي التنصيص "..." تقدر تغيّره                      ║
+     ║  • ""  فاضية = الجزء ده مش هيظهر في الموقع                         ║
+     ║  • السوشيال: اكتب اليوزرنيم بس (من غير @) أو الصق اللينك كامل      ║
+     ║  • الخدمات والأسئلة: انسخ أي بلوك { ... } والصقه وغيّر الكلام       ║
+     ╚═══════════════════════════════════════════════════════════════════╝ -->
 <script>
-/* ---------- Brand ---------- */
-const B={ar:'مركز أكتوبر للتكييف',en:'OCTOBER',sub:'AIR CONDITIONING'};
+const CONFIG = {
+  name: "مركز أكتوبر للتكييف",                 // 🟢 اسم المركز
+  en: "AIR CONDITIONING",                      // 🟢 السطر الإنجليزي (سيبه "" لو مش عايزه)
 
-/* ---------- Basic helpers ---------- */
-const f1=x=>Number(x).toFixed(1);
-const S=(k,w)=>`fill="none" stroke="${k}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"`;
-const Q=(n,r,st=-90,cx=100,cy=100)=>Array.from({length:n},(_,i)=>{const t=(st+i*360/n)*Math.PI/180;return [cx+r*Math.cos(t),cy+r*Math.sin(t)]});
-const P=(...a)=>Q(...a).map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
-const rep=(n,f,step)=>Array.from({length:n},(_,i)=>f(i,i*(step||360/n))).join('');
-const G=(a,s,cx=100,cy=100)=>`<g transform="rotate(${a} ${cx} ${cy})">${s}</g>`;
-const SHIELD='M100 18L168 42V104C168 144 136 168 100 184C64 168 32 144 32 104V42Z';
-const DROP='M0 -26C0 -26 -20 2 -20 12A20 20 0 0 0 20 12C20 2 0 -26 0 -26Z';
+  heroTitle: "كل خدمات التكييف <em>في مكان واحد</em>",          // 🟢 العنوان الرئيسي (em = الكلمات الذهبية)
+  heroSub: "صيانة وتركيب وتوريد وتأسيس مواسير التكييف، خدمة شاملة ومتكاملة لكل الناس.",  // 🟢 الوصف تحت العنوان
+  chips: ["صيانة", "تركيب", "توريد", "تأسيس مواسير"],            // 🟢 الشرائح تحت الأزرار
 
-/* ---------- AC element helpers ---------- */
-// Snowflake (6 arms with branches)
-const sn=(cx,cy,r,col,w=4)=>`<g transform="translate(${cx} ${cy})" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${rep(6,(i,ang)=>`<g transform="rotate(${ang})"><path d="M0 0V${f1(-r)}M0 ${f1(-r*.55)}L${f1(-r*.2)} ${f1(-r*.75)}M0 ${f1(-r*.55)}L${f1(r*.2)} ${f1(-r*.75)}"/></g>`)}</g>`;
-// Wall-mounted split AC unit: body b, accent a, slot colour c
-const ac=(x,y,w,h,b,a,c)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${f1(h*.28)}" fill="${b}"/><path d="M${f1(x+w*.08)} ${f1(y+h*.62)}H${f1(x+w*.92)}" stroke="${c}" stroke-width="${f1(Math.max(1.5,h*.07))}" stroke-linecap="round"/><rect x="${f1(x+w*.1)}" y="${f1(y+h*.72)}" width="${f1(w*.8)}" height="${f1(h*.1)}" rx="${f1(h*.05)}" fill="${a}"/><circle cx="${f1(x+w*.84)}" cy="${f1(y+h*.3)}" r="${f1(Math.max(1.6,h*.06))}" fill="${a}"/>`;
-// Airflow wave
-const wv=(x,y,w,col,sw=4,n=2,amp=8)=>{const p=w/n;let d=`M${x} ${y}q${f1(p/4)} ${-amp} ${f1(p/2)} 0`;for(let i=1;i<2*n;i++)d+=`t${f1(p/2)} 0`;return `<path d="${d}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linecap="round"/>`};
-// Fan with n blades and hub
-const fan=(cx,cy,r,n,col,hub)=>`<g transform="translate(${f1(cx)} ${f1(cy)}) scale(${(r/66).toFixed(3)})">${rep(n,(i,ang)=>`<g transform="rotate(${ang})"><path d="M0 0C0 -38 18 -66 50 -58C52 -26 32 -2 0 0Z" fill="${col}"/></g>`)}<circle r="9" fill="${hub}"/></g>`;
-// Outdoor condenser unit
-const out=(x,y,w,h,k,a,c)=>{const cx=x+w*.4,cy=y+h/2,r=Math.min(w,h)*.36;return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${f1(h*.1)}" ${S(k,5)}/><circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(r)}" ${S(k,4)}/>${fan(cx,cy,r*.85,3,a,k)}${[.78,.86,.94].map(t=>`<path d="M${f1(x+w*t)} ${f1(y+h*.2)}V${f1(y+h*.8)}" ${S(k,3)}/>`).join('')}`};
-// Arc path
-const arc=(cx,cy,r,a1,a2)=>{const p=t=>[cx+r*Math.cos(t*Math.PI/180),cy+r*Math.sin(t*Math.PI/180)];const s=p(a1),e=p(a2);return `M${f1(s[0])} ${f1(s[1])}A${r} ${r} 0 0 1 ${f1(e[0])} ${f1(e[1])}`};
+  whatsapp: "01101328223",                     // 🟢 رقم واتساب (بالصفر الأول)
+  whatsappMsg: "السلام عليكم، عايز أستفسر عن خدمة من خدمات التكييف",  // 🟢 الرسالة الجاهزة
+  phones: ["01101328223", "01553242001"],      // 🟢 أرقام الاتصال
 
-/* ---------- 70 Logo Concepts: [Arabic concept, mark(k=ink, a=accent, c=background)] ---------- */
-const L=[
-/*1*/["مثمّن أضلاع يرمز لـ«أكتوبر» (Octo = 8) يحتضن وحدة تكييف سبليت وندفة ثلج.",
- (k,a,c)=>`<polygon points="${P(8,82,-67.5)}" ${S(k,5)}/>${ac(56,72,88,36,k,a,c)}${sn(100,138,20,a,4)}`],
-/*2*/["ندفة ثلج كبيرة تحتضن في قلبها وحدة تكييف: التبريد في مركز العلامة.",
- (k,a,c)=>`${sn(100,100,84,k,4)}<circle cx="100" cy="100" r="38" fill="${c}"/>${ac(72,90,56,22,k,a,c)}`],
-/*3*/["درع هندسي بداخله وحدة تكييف وموجات هواء: الأمان والانتعاش في علامة واحدة.",
- (k,a,c)=>`<path d="${SHIELD}" ${S(k,5)}/>${ac(62,62,76,34,k,a,c)}${wv(64,124,72,a,5,2)}${wv(72,148,56,a,5,2)}`],
-/*4*/["حرف O تخترقه وحدة تكييف: دائرة أكتوبر التي يعبرها الهواء البارد.",
- (k,a,c)=>`<circle cx="100" cy="100" r="60" ${S(k,9)}/><rect x="38" y="80" width="124" height="42" rx="12" fill="${c}"/>${ac(44,86,112,30,k,a,c)}`],
-/*5*/["حرف الألف (أ) بهيئة وحدة تكييف عمودية (Tower) يتوجها ماسة.",
- (k,a,c)=>`<rect x="82" y="46" width="36" height="128" rx="8" fill="${k}"/>${[70,92,114,136].map(y=>`<path d="M90 ${y}H110" ${S(c,4)}/>`).join('')}<circle cx="100" cy="158" r="5" fill="${a}"/><polygon points="100,10 114,26 100,42 86,26" fill="${a}"/>`],
-/*6*/["مروحة وحدة التكييف بأربع شفرات داخل شبكة حماية دائرية.",
- (k,a,c)=>`<circle cx="100" cy="100" r="88" ${S(a,2.5)}/><circle cx="100" cy="100" r="74" ${S(k,3)}/>${fan(100,100,66,4,k,a)}`],
-/*7*/["ندفة ثلج منحوتة بالمساحة السلبية داخل قرص صلب.",
- (k,a,c)=>`<circle cx="100" cy="100" r="82" fill="${k}"/>${sn(100,100,52,c,5)}<circle cx="100" cy="100" r="92" ${S(a,2)}/>`],
-/*8*/["قوس إسلامي مدبب يحتضن وحدة تكييف وموجات هواء: عمارة عريقة وبرودة عصرية.",
- (k,a,c)=>`<path d="M40 176V96C40 56 78 32 100 16C122 32 160 56 160 96V176" ${S(k,5)}/>${ac(66,72,68,32,k,a,c)}${wv(70,130,60,a,5,2)}<path d="M28 176H172" ${S(k,5)}/>`],
-/*9*/["زهرة لوتس مصرية تحمل ندفة ثلج في قلبها: نقاء الهواء وجذور الهوية.",
- (k,a,c)=>{const pet='<path d="M100 40C125 75 125 120 100 152C75 120 75 75 100 40Z"/>';return `<g fill="none" stroke="${k}" stroke-width="4">${G(-62,pet,100,152)}${G(62,pet,100,152)}</g><g fill="${a}" stroke="${c}" stroke-width="3">${G(-32,pet,100,152)}${G(32,pet,100,152)}</g><g fill="${k}" stroke="${c}" stroke-width="3">${pet}</g>${sn(100,110,17,c,3.5)}<path d="M54 164Q100 184 146 164" ${S(k,4)}/>`}],
-/*10*/["شمس ساطعة تحتها وحدة تكييف ونسيم بارد: حرارة تُروَّض.",
- (k,a,c)=>`<circle cx="100" cy="50" r="30" fill="${a}"/>${ac(48,92,104,42,k,a,c)}${wv(60,160,80,k,5,2)}`],
-/*11*/["هرم صلب بندفة ثلج سلبية في قلبه: ثبات وبرودة وخبرة.",
- (k,a,c)=>`<polygon points="100,26 174,170 26,170" fill="${k}"/>${sn(100,126,32,c,4.5)}<rect x="26" y="180" width="148" height="5" fill="${a}"/>`],
-/*12*/["مكعب سداسي: وجهه العلوي ندفة ثلج والجانبي شرائح تهوية.",
- (k,a,c)=>`<polygon points="${P(6,80)}" ${S(k,5)}/><path d="M100 100L31 60M100 100L169 60M100 100V180" ${S(k,4)}/>${sn(100,60,20,a,3.5)}${[93,113,133].map(y=>`<path d="M43 ${y}L88 ${y+26}" ${S(a,4)}/>`).join('')}`],
-/*13*/["وحدة تكييف علوية تنساب منها أقواس هواء متتالية.",
- (k,a,c)=>`${ac(24,22,80,30,k,a,c)}${[36,64,92].map((r,i)=>`<path d="${arc(44,56,r,5,85)}" ${S(i==1?a:k,6)}/>`).join('')}`],
-/*14*/["نجمة ثمانية من مربعين متقاطعين (المشربية والرقم 8) تحيط بندفة ثلج.",
- (k,a,c)=>`<rect x="40" y="40" width="120" height="120" ${S(k,5)}/>${G(45,`<rect x="40" y="40" width="120" height="120" ${S(a,5)}/>`)}<circle cx="100" cy="100" r="32" fill="${c}"/>${sn(100,100,24,k,4)}`],
-/*15*/["تاج فوق وحدة تكييف: رمز الفخامة في خدمة التبريد.",
- (k,a,c)=>`<path d="M60 96L66 52L86 74L100 42L114 74L134 52L140 96Z" fill="${a}"/>${ac(40,110,120,50,k,a,c)}${wv(56,180,88,a,4,2)}`],
-/*16*/["معيّنات متداخلة تتقلص نحو ندفة ثلج: تركيز وإتقان.",
- (k,a,c)=>`<polygon points="${P(4,84)}" ${S(k,5)}/><polygon points="${P(4,60)}" ${S(a,4)}/>${sn(100,100,30,k,4)}`],
-/*17*/["ورقة شجر بشرائح أفقية كفتحات التكييف وندفة ثلج: الطبيعة والتقنية معاً.",
- (k,a,c)=>`<path d="M100 20C158 62 158 132 100 182C42 132 42 62 100 20Z" fill="${k}"/><path d="M30 92H170M30 116H170M30 140H170" ${S(c,5)}/>${sn(100,62,15,c,3)}`],
-/*18*/["دائرة نصفها كتلة حرارية ونصفها ندفة ثلج: الحرارة والبرودة.",
- (k,a,c)=>`<path d="M100 20A80 80 0 0 0 100 180Z" fill="${k}"/><path d="M100 20A80 80 0 0 1 100 180Z" ${S(k,5)}/>${sn(140,100,32,a,4)}`],
-/*19*/["الرقم 10 (أكتوبر): الصفر مروحة تكييف دوّارة.",
- (k,a,c)=>`<polygon points="82,44 82,156 64,156 64,70 44,82 44,60" fill="${k}"/><circle cx="132" cy="100" r="46" ${S(k,5)}/>${fan(132,100,40,4,a,k)}`],
-/*20*/["قطرة ماء تحمل ندفة ثلج سلبية: تبريد مستدام وترشيد.",
- (k,a,c)=>`<path d="M100 20C100 20 46 88 46 126A54 54 0 0 0 154 126C154 88 100 20 100 20Z" fill="${k}"/>${sn(100,128,28,c,4)}`],
-/*21*/["وحدة تكييف خارجية (كمبريسور) بمروحة ثلاثية وشبكة جانبية.",
- (k,a,c)=>`${out(30,44,140,112,k,a,c)}<path d="M40 176H160" ${S(a,5)}/>`],
-/*22*/["حلزون هواء ينساب نحو ندفة ثلج في المركز.",
- (k,a,c)=>{let d='';for(let t=0;t<=12.4;t+=.25){const r=4+t*6;d+=(t?'L':'M')+f1(100+r*Math.cos(t))+' '+f1(100+r*Math.sin(t))}return `<path d="${d}" ${S(k,5)}/><circle cx="100" cy="100" r="17" fill="${c}"/>${sn(100,100,13,a,3)}`}],
-/*23*/["أشجار صنوبر من مثلثات مكدسة تحت ندفة ثلج: هواء منعش وبيئة نظيفة.",
- (k,a,c)=>`<g fill="${k}" stroke="${c}" stroke-width="3" stroke-linejoin="round"><polygon points="100,90 166,168 34,168"/><polygon points="100,52 152,124 48,124"/><polygon points="100,20 140,78 60,78"/></g><rect x="92" y="170" width="16" height="16" fill="${a}"/>${sn(158,32,16,a,3.5)}`],
-/*24*/["حرف O بطراز كلاسيكي (ديدون) في قلبه ندفة ثلج ذهبية.",
- (k,a,c)=>`<ellipse cx="100" cy="100" rx="58" ry="72" fill="${k}"/><ellipse cx="100" cy="100" rx="30" ry="54" fill="${c}"/>${sn(100,100,24,a,3.5)}`],
-/*25*/["حلقة مفتوحة تتنفس وفي قلبها مروحة تكييف.",
- (k,a,c)=>`<circle cx="100" cy="100" r="80" fill="none" stroke="${k}" stroke-width="10" stroke-dasharray="400 100" stroke-linecap="round"/>${fan(100,100,56,3,k,a)}`],
-/*26*/["ثلاث شيفرونات كطبقات جبال تعلوها ندفة ثلج: ارتفاع واستدامة.",
- (k,a,c)=>`<g transform="translate(0 14)"><g ${S(k,9)}><path d="M36 92L100 38L164 92"/><path d="M36 128L100 74L164 128"/></g><path d="M36 164L100 110L164 164" ${S(a,9)}/></g>${sn(100,26,15,a,3.5)}`],
-/*27*/["حرف A (Air) عارضته وحدة تكييف: الهواء في قلب الحرف.",
- (k,a,c)=>`<path d="M38 172L100 28L162 172" ${S(k,9)}/><rect x="58" y="104" width="84" height="46" fill="${c}"/>${ac(66,112,68,30,k,a,c)}`],
-/*28*/["نجمة سداسية من مثلثين متعاكسين تحيط بمروحة: توازن الحرارة والبرودة.",
- (k,a,c)=>`<polygon points="${P(3,82)}" ${S(k,5)}/><polygon points="${P(3,82,90)}" ${S(k,5)}/>${fan(100,100,30,3,a,k)}`],
-/*29*/["إكليل غار حول وحدة تكييف: تكريم للجودة والإتقان.",
- (k,a,c)=>{const lf=`<path d="M62 152C34 124 34 76 62 48" ${S(k,4)}/><g fill="${a}">${[[44,132,-20],[37,108,-6],[37,84,6],[44,60,20]].map(([x,y,r])=>`<ellipse cx="${x}" cy="${y}" rx="6" ry="13" transform="rotate(${r} ${x} ${y})"/>`).join('')}</g>`;return `${lf}<g transform="translate(200 0) scale(-1 1)">${lf}</g>${ac(74,86,52,28,k,a,c)}`}],
-/*30*/["درع صلب بندفة ثلج سلبية: أمان التبريد وضمان الخدمة.",
- (k,a,c)=>`<path d="${SHIELD}" fill="${k}"/>${sn(100,104,42,c,5)}`],
-/*31*/["موزّع هواء دائري بشرائح رأسية: فتحة التكييف بصيغة شعار.",
- (k,a,c)=>`<circle cx="100" cy="100" r="82" fill="${k}"/>${[0,1,2,3,4,5,6].map(i=>{const x=52+i*16,h=Math.sqrt(82*82-(x-100)**2)-16;return `<path d="M${x} ${f1(100-h)}V${f1(100+h)}" ${S(i==3?a:c,4)}/>`}).join('')}`],
-/*32*/["سهمان هابطان وندفة ثلج داخل دائرة: تدفق الهواء البارد.",
- (k,a,c)=>`<circle cx="100" cy="100" r="80" ${S(k,5)}/><path d="M64 88L100 120L136 88M64 118L100 150L136 118" ${S(a,8)}/>${sn(100,54,12,k,3)}`],
-/*33*/["كرة أرضية بندفة ثلج داخل حلقتين: تبريد بمسؤولية بيئية عالمية.",
- (k,a,c)=>`<circle cx="100" cy="100" r="88" ${S(k,3)}/><circle cx="100" cy="100" r="74" ${S(k,5)}/>${sn(100,100,52,a,4.5)}`],
-/*34*/["برعم بورقتين متناظرتين وندفة ثلج: نمو ونظافة واستدامة.",
- (k,a,c)=>`<path d="M100 170C60 160 40 120 45 70C90 80 105 120 100 170Z" fill="${k}"/><path d="M100 170C140 160 160 120 155 70C110 80 95 120 100 170Z" fill="${a}"/>${sn(100,118,20,c,3.5)}<path d="M100 170V192" ${S(k,5)}/>`],
-/*35*/["هلال بأسلوب سلبي وندفة ثلج كنجمة: ليالي أكتوبر المعتدلة.",
- (k,a,c)=>`<circle cx="100" cy="100" r="72" fill="${k}"/><circle cx="126" cy="88" r="60" fill="${c}"/>${sn(150,72,18,a,3.5)}`],
-/*36*/["وريقة رباعية من أربع دوائر تحيط بندفة ثلج.",
- (k,a,c)=>`${[[100,66],[134,100],[100,134],[66,100]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="34" ${S(k,5)}/>`).join('')}${sn(100,100,22,a,4)}`],
-/*37*/["دائرة بداخلها وحدة تكييف وموجتا نسيم: هواء لطيف.",
- (k,a,c)=>`<circle cx="100" cy="100" r="82" ${S(k,5)}/>${ac(58,56,84,38,k,a,c)}${wv(60,124,80,a,5,2)}${wv(68,148,64,a,5,2)}`],
-/*38*/["جوهرة سداسية الأوجه بندفة ثلج في قلبها: فخامة البرودة.",
- (k,a,c)=>{const v=Q(6,82);return v.map((p,i)=>{const q=v[(i+1)%6];return `<polygon points="100,100 ${f1(p[0])},${f1(p[1])} ${f1(q[0])},${f1(q[1])}" fill="${i%2?a:k}" stroke="${k}" stroke-width="3" stroke-linejoin="round"/>`}).join('')+sn(100,100,32,c,4)}],
-/*39*/["مروحة بثلاث شفرات قطاعية تترك فراغات سلبية: حركة دورانية.",
- (k,a,c)=>`${rep(3,(i,ang)=>G(ang,`<path d="M100 100V20A80 80 0 0 1 169.3 60Z" fill="${i==1?a:k}"/>`))}<circle cx="100" cy="100" r="10" fill="${c}"/>`],
-/*40*/["حلقات هواء متدرجة الانتشار من ندفة ثلج واحدة.",
- (k,a,c)=>`<circle cx="100" cy="100" r="22" ${S(k,4)}/><circle cx="100" cy="100" r="46" fill="none" stroke="${a}" stroke-width="5" stroke-dasharray="220 69" stroke-linecap="round"/><circle cx="100" cy="100" r="72" fill="none" stroke="${k}" stroke-width="6" stroke-dasharray="330 122" stroke-linecap="round"/>${sn(100,100,14,k,3.5)}`],
-/*41*/["شروق فوق وحدة تكييف بدل الأفق: يوم جديد بمناخ مثالي.",
- (k,a,c)=>`<path d="M32 132A68 68 0 0 1 168 132Z" fill="${a}"/>${rep(7,(i)=>{const t=(180+i*30)*Math.PI/180;return `<path d="M${f1(100+82*Math.cos(t))} ${f1(132+82*Math.sin(t))}L${f1(100+98*Math.cos(t))} ${f1(132+98*Math.sin(t))}" ${S(k,5)}/>`},30)}${ac(52,144,96,34,k,a,c)}`],
-/*42*/["منزل بخطوط دقيقة وعلى جداره وحدة تكييف: التركيب للمنازل.",
- (k,a,c)=>`<path d="M26 102L100 34L174 102" ${S(k,6)}/><path d="M48 88V168H152V88" ${S(k,6)}/>${ac(68,104,64,28,k,a,c)}${wv(72,150,56,a,4,2,6)}`],
-/*43*/["دائرتان متقاطعتان تصنعان عدسة ذهبية تحمل ندفة ثلج: شراكة وثقة.",
- (k,a,c)=>`<circle cx="72" cy="100" r="50" ${S(k,5)}/><circle cx="128" cy="100" r="50" ${S(k,5)}/><path d="M100 58.6A50 50 0 0 1 100 141.4A50 50 0 0 1 100 58.6Z" fill="${a}"/>${sn(100,100,22,c,4)}`],
-/*44*/["جهاز تحكّم عن بُعد (ريموت) بشاشة ندفة ثلج وأزرار: تحكّم راقٍ.",
- (k,a,c)=>`<rect x="66" y="16" width="68" height="168" rx="16" ${S(k,5)}/><rect x="78" y="30" width="44" height="26" rx="5" fill="${a}"/>${sn(100,43,9,k,2.2)}${[80,104,128].map(y=>[84,100,116].map(x=>`<circle cx="${x}" cy="${y}" r="6" fill="${k}"/>`).join('')).join('')}<rect x="80" y="150" width="40" height="14" rx="7" fill="${a}"/>`],
-/*45*/["هرمان خطيان وندفة ثلج بدل الشمس: هوية مصرية وبرودة عصرية.",
- (k,a,c)=>`<path d="M22 168L84 56L146 168Z" ${S(k,5)}/><path d="M96 168L138 96L180 168Z" ${S(k,5)}/>${sn(148,50,22,a,4)}<path d="M14 168H186" ${S(k,5)}/>`],
-/*46*/["تاج فوق درع تتوسطه ندفة ثلج: فخامة محمية.",
- (k,a,c)=>`<path d="M100 66L155 84V122C155 152 130 170 100 182C70 170 45 152 45 122V84Z" ${S(k,5)}/><path d="M64 52L74 22L90 40L100 14L110 40L126 22L136 52Z" fill="${a}"/>${sn(100,124,26,k,4)}`],
-/*47*/["دائرة يشقها تيار هواء سلبي وفوقه ندفة ثلج.",
- (k,a,c)=>`<circle cx="100" cy="100" r="80" fill="${k}"/><path d="M14 138L186 68V90L14 160Z" fill="${c}"/>${sn(100,58,17,c,3.5)}<circle cx="100" cy="100" r="90" ${S(a,2)}/>`],
-/*48*/["رمز اللانهاية كمسار هواء مستمر تتوسطه ندفة ثلج: خدمة دائمة.",
- (k,a,c)=>`<path d="M100 100C130 50 175 50 175 100C175 150 130 150 100 100C70 50 25 50 25 100C25 150 70 150 100 100Z" ${S(k,10)}/><circle cx="100" cy="100" r="22" fill="${c}"/>${sn(100,100,16,a,3.5)}`],
-/*49*/["خمس أوراق تتفتح حول ندفة ثلج: نضارة الهواء.",
- (k,a,c)=>`${rep(5,(i,ang)=>G(ang,`<path d="M100 100C80 74 84 44 100 20C116 44 120 74 100 100Z" fill="${i%2?a:k}"/>`))}<circle cx="100" cy="100" r="17" fill="${c}"/>${sn(100,100,12,k,3)}`],
-/*50*/["سرخس متناظر يتوجه ندفة ثلج: الطبيعة تبرّد.",
- (k,a,c)=>`<path d="M100 184V40" ${S(k,4)}/>${[0,1,2,3,4].map(j=>{const y=160-j*26,l=34-j*5;return `<path d="M100 ${y}L${100-l} ${f1(y-l*.75)}M100 ${y}L${100+l} ${f1(y-l*.75)}" ${S(k,4)}/>`}).join('')}${sn(100,22,17,a,3.5)}`],
-/*51*/["إطار مثمن بحرف الألف وندفة ثلج: مونوغرام عربي فاخر.",
- (k,a,c)=>`<polygon points="60,28 140,28 172,60 172,140 140,172 60,172 28,140 28,60" ${S(k,5)}/><polygon points="${P(8,70,-67.5)}" ${S(a,2.5)}/><text x="100" y="128" text-anchor="middle" font-family="'Amiri','Noto Naskh Arabic','Traditional Arabic',serif" font-size="88" font-weight="700" fill="${k}">أ</text>${sn(100,156,11,a,3)}`],
-/*52*/["دائرة يخترقها برج تكييف عمودي بشرائح تهوية: ثبات في قلب الحركة.",
- (k,a,c)=>`<circle cx="100" cy="100" r="62" ${S(k,6)}/><rect x="86" y="24" width="28" height="152" rx="7" fill="${a}"/>${[62,86,110,134].map(y=>`<path d="M93 ${y}H107" ${S(c,3)}/>`).join('')}`],
-/*53*/["قبة متدرجة بثلاث طبقات وندفة ثلج في قلبها: عمارة وتناغم.",
- (k,a,c)=>`<path d="M20 150A80 80 0 0 1 180 150Z" fill="${k}"/><path d="M46 150A54 54 0 0 1 154 150Z" fill="${a}"/><path d="M72 150A28 28 0 0 1 128 150Z" fill="${c}"/>${sn(100,139,12,k,3)}<path d="M14 162H186" ${S(k,5)}/>`],
-/*54*/["شرائح تهوية أفقية تزداد سماكة داخل دائرة: تدرّج الهواء البارد.",
- (k,a,c)=>[[38,4],[56,6],[76,8],[100,11],[126,14],[156,18]].map(([y,h],i)=>{const yc=y+h/2,ch=Math.sqrt(6400-(yc-100)**2)-2;return `<rect x="${f1(100-ch)}" y="${y}" width="${f1(2*ch)}" height="${h}" fill="${i==5?a:k}"/>`}).join('')],
-/*55*/["سداسي خلية النحل يحتضن مروحة تكييف: هندسة وكفاءة أداء.",
- (k,a,c)=>`<polygon points="${P(6,80)}" ${S(k,5)}/>${fan(100,100,48,3,a,k)}`],
-/*56*/["ثماني نقاط (Octo = 8) حول ندفة ثلج: أكتوبر والبرودة.",
- (k,a,c)=>`${rep(8,(i,ang)=>G(ang,'<circle cx="100" cy="28" r="9" fill="'+k+'"/>'))}${sn(100,100,44,a,4.5)}`],
-/*57*/["ثلاثة معيّنات تمثل الركائز: الفخامة والاستدامة والأمان، وفي قلبها ندفة ثلج.",
- (k,a,c)=>`<g stroke="${c}" stroke-width="3" stroke-linejoin="round"><polygon points="100,20 132,52 100,84 68,52" fill="${k}"/><polygon points="100,116 132,148 100,180 68,148" fill="${k}"/><polygon points="100,68 132,100 100,132 68,100" fill="${a}"/></g>${sn(100,100,20,c,3.5)}`],
-/*58*/["قطرتان بحجمين وندفة ثلج: ترشيد المياه والطاقة.",
- (k,a,c)=>`<path d="M80 26C80 26 34 88 34 122A46 46 0 0 0 126 122C126 88 80 26 80 26Z" fill="${k}"/>${sn(80,118,20,c,3.5)}<path transform="translate(152 140) scale(1.1)" d="${DROP}" fill="${a}"/>`],
-/*59*/["نجمة رباعية مقعّرة بندفة ثلج في قلبها: لمعان النظافة والدقة.",
- (k,a,c)=>`<path d="M100 14Q108 92 186 100Q108 108 100 186Q92 108 14 100Q92 92 100 14Z" fill="${k}"/><circle cx="100" cy="100" r="20" fill="${c}"/>${sn(100,100,16,a,3)}`],
-/*60*/["شمس وانعكاسها على شرائح تهوية، وفي الشمس ندفة ثلج.",
- (k,a,c)=>`<path d="M20 100A80 80 0 0 1 180 100Z" fill="${a}"/><path d="M20 108A80 80 0 0 0 180 108Z" fill="${k}"/><path d="M50 130H150M70 152H130" ${S(c,4)}/>${sn(100,64,22,k,4)}`],
-/*61*/["رواق أقواس مدببة تحتها ندفات ثلج: عمارة إسلامية ومساحات مكيّفة.",
- (k,a,c)=>`${[0,1,2].map(i=>{const x=28+i*48;return `<path d="M${x} 168V108Q${x} 72 ${x+22} 58Q${x+44} 72 ${x+44} 108V168" ${S(k,5)}/>${sn(x+22,118,11,a,3)}`}).join('')}<path d="M18 168H182" ${S(a,5)}/>`],
-/*62*/["بلاطات باوهاوس من أرباع دوائر ومثلث وندفة ثلج: توازن هندسي صارم.",
- (k,a,c)=>`<path d="M32 98A66 66 0 0 1 98 32V98Z" fill="${k}"/><path d="M102 32L168 98H102Z" fill="${a}"/><circle cx="65" cy="135" r="33" ${S(k,5)}/>${sn(65,135,22,a,4)}<path d="M168 102A66 66 0 0 1 102 168V102Z" fill="${k}"/>`],
-/*63*/["سعف نخيل مروحي ينبثق من ندفة ثلج: هوية محلية وتهوية طبيعية.",
- (k,a,c)=>`${Array.from({length:7},(_,i)=>{const t=(-160+i*23.33)*Math.PI/180,r=i==3?120:i%2?108:96;return `<path d="M100 172L${f1(100+r*Math.cos(t))} ${f1(172+r*Math.sin(t))}" ${S(i==3?a:k,6)}/>`}).join('')}<circle cx="100" cy="172" r="19" fill="${c}"/>${sn(100,172,15,a,3.5)}`],
-/*64*/["حرف O من نصفي حلقة متزاحين وندفة ثلج في المنتصف: ظل وضوء وبرودة.",
- (k,a,c)=>`<path d="M92 30A70 70 0 0 0 92 170" fill="none" stroke="${k}" stroke-width="14"/><path d="M108 30A70 70 0 0 1 108 170" fill="none" stroke="${a}" stroke-width="14"/>${sn(100,100,30,k,4)}`],
-/*65*/["سحابة صلبة تحتها وحدة تكييف: هواء نقي وتبريد هادئ.",
- (k,a,c)=>`<g fill="${k}"><circle cx="76" cy="90" r="28"/><circle cx="112" cy="72" r="36"/><circle cx="148" cy="92" r="26"/><rect x="76" y="92" width="72" height="26"/></g>${ac(50,138,100,38,a,k,c)}`],
-/*66*/["دائرة متوازنة بين البرودة (ندفة) والدفء (شمس) بمنحنى انسيابي.",
- (k,a,c)=>`<circle cx="100" cy="100" r="80" ${S(k,4)}/><path d="M100 20A80 80 0 0 1 100 180A40 40 0 0 1 100 100A40 40 0 0 0 100 20Z" fill="${k}"/><circle cx="100" cy="60" r="16" fill="${c}"/>${sn(100,60,12,a,3)}<circle cx="100" cy="140" r="13" fill="${a}"/>`],
-/*67*/["وحدة تكييف علوية تسقط منها قطرتان: تبريد وترشيد للمياه.",
- (k,a,c)=>`${ac(50,24,100,44,k,a,c)}<path transform="translate(70 128) scale(1.5)" d="${DROP}" fill="${k}"/><path transform="translate(130 128) scale(1.5)" d="${DROP}" fill="${a}"/>`],
-/*68*/["توربين رياح قلبه ندفة ثلج: طاقة نظيفة تشغّل التبريد.",
- (k,a,c)=>`<path d="M100 104V176M72 178H128" ${S(k,5)}/>${rep(3,(i,ang)=>G(ang,`<path d="M100 100L94 30Q100 22 106 30Z" fill="${k}"/>`))}<circle cx="100" cy="100" r="16" fill="${c}"/>${sn(100,100,13,a,3)}`],
-/*69*/["قرص ترموستات بعلامات متدرجة وندفة ثلج: تحكّم دقيق في الراحة.",
- (k,a,c)=>`<circle cx="100" cy="100" r="80" ${S(k,5)}/>${Array.from({length:17},(_,i)=>{const t=(135+i*16.875)*Math.PI/180,r2=i%4==0?70:64;return `<path d="M${f1(100+56*Math.cos(t))} ${f1(100+56*Math.sin(t))}L${f1(100+r2*Math.cos(t))} ${f1(100+r2*Math.sin(t))}" ${S(k,3)}/>`}).join('')}<path d="M100 100L123 60" ${S(a,6)}/><circle cx="100" cy="100" r="9" fill="${k}"/>${sn(100,138,12,k,3)}`],
-/*70*/["ختم مثمن متداخل بندفة ثلج في قلبه: توقيع الجودة والرقم 8.",
- (k,a,c)=>`<polygon points="${P(8,84,-67.5)}" fill="${k}"/><polygon points="${P(8,68,-67.5)}" ${S(c,2.5)}/><polygon points="${P(8,46,-67.5)}" fill="${a}"/><circle cx="100" cy="100" r="26" fill="${c}"/>${sn(100,100,20,k,3.5)}`]
-];
+  address: "",        // 🟢 عنوان المركز (فاضي = مش هيظهر)
+  hours: "",          // 🟢 مواعيد العمل، مثال: "يوميًا من 9 ص إلى 10 م"
+  areas: "",          // 🟢 مناطق الخدمة، مثال: "أكتوبر والشيخ زايد وما حولهما"
+  mapUrl: "",         // 🟢 لينك جوجل ماب (Share > Copy link)
 
-/* ---------- Colour schemes: [ink, accent, background] ---------- */
-const SCH=[["#14213D","#B08D57","#F6F2EA"],["#F6F2EA","#C9A66B","#14213D"],["#1F4D45","#B08D57","#F3EFE6"],["#0B0B0B","#8A6A3B","#EFEAE0"],["#F3EFE6","#7FB5A6","#1F4D45"]];
-const AR="font-family=\"'Cairo','Tajawal','Segoe UI',Tahoma,'Noto Naskh Arabic',sans-serif\"";
-const LA="font-family=\"'Helvetica Neue',Helvetica,Arial,sans-serif\"";
+  // 🟢 السوشيال ميديا: يوزرنيم أو لينك كامل
+  // الأيقونات بتظهر في آخر الصفحة (الفوتر). الأيقونة الفاضية بتظهر باهتة لحد ما تحط لينكها.
+  social: { facebook: "", instagram: "", tiktok: "", youtube: "", whatsappChannel: "", telegram: "", x: "", snapchat: "", linkedin: "" },
+  showEmptySocial: true,   // 🟢 true = اعرض كل الأيقونات حتى الفاضية | false = اعرض اللي ليها لينك بس (حطها false قبل النشر النهائي)
 
-function build(i){
-  const [k,a,c]=SCH[i%5];
-  const mark=L[i][1](k,a,c);
-  const st=i%3;let t='';
-  if(st==0){
-    t=`<text x="150" y="262" text-anchor="middle" ${AR} font-size="25" font-weight="700" fill="${k}">${B.ar}</text><text x="150" y="288" text-anchor="middle" ${LA} font-size="10" letter-spacing="5" fill="${a}">${B.en} ${B.sub}</text>`;
-  }else if(st==1){
-    t=`<text x="150" y="258" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="24" letter-spacing="8" fill="${k}">${B.en}</text><rect x="130" y="270" width="40" height="2" fill="${a}"/><text x="150" y="294" text-anchor="middle" ${AR} font-size="17" font-weight="600" fill="${a}">${B.ar}</text>`;
-  }else{
-    t=`<text x="150" y="266" text-anchor="middle" ${AR} font-size="27" font-weight="700" fill="${k}">${B.ar}</text><rect x="135" y="278" width="30" height="2" fill="${a}"/><text x="150" y="300" text-anchor="middle" ${LA} font-size="9" letter-spacing="4" fill="${a}">${B.sub}</text>`;
-  }
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 310" role="img" aria-label="Logo ${i+1}"><rect width="300" height="310" rx="14" fill="${c}"/><g transform="translate(50,22)">${mark}</g>${t}</svg>`;
-}
+  // 🟢 الخدمات (كل بلوك = كارت)   icon: wrench | install | box | pipe
+  services: [
+    { icon: "wrench",  title: "صيانة", text: "نرجّع تكييفك يشتغل بكفاءته ويبرّد زي أول يوم.",
+      points: ["تنظيف الوحدة الداخلية والخارجية", "فحص الفريون والتشغيل", "إصلاح الأعطال"] },
+    { icon: "install", title: "تركيب", text: "تركيب سليم ومحكم لتكييفك الجديد.",
+      points: ["تركيب الوحدة الداخلية والخارجية", "توصيلات وتشغيل تجريبي", "تنظيف مكان التركيب"] },
+    { icon: "box",     title: "توريد", text: "نوفرلك التكييف المناسب لمساحة مكانك.",
+      points: ["اختيار القدرة المناسبة", "مكيفات وأجهزة تكييف", "توريد وتركيب في خطوة واحدة"] },
+    { icon: "pipe",    title: "تأسيس مواسير", text: "تأسيس مواسير التكييف قبل التشطيب بشكل مرتب.",
+      points: ["تأسيس مواسير النحاس", "تمديدات التصريف", "تنسيق مع مرحلة التشطيب"] }
+  ],
 
-/* ---------- Render grid ---------- */
-const svgs=L.map((_,i)=>build(i));
-const grid=document.getElementById('grid');
-grid.innerHTML=L.map((l,i)=>`<article class="card" tabindex="0" data-i="${i}"><div class="meta"><div class="num">${i+1}</div><div class="txt"><h2>الشعار رقم ${i+1}</h2><p>${l[0]}</p></div></div><div class="art">${svgs[i]}</div></article>`).join('');
+  // 🟢 لماذا نحن
+  why: [
+    { title: "خدمة شاملة", text: "من تأسيس المواسير للصيانة، كل خدمات التكييف عند جهة واحدة." },
+    { title: "تواصل سريع", text: "كلمنا على الموبايل أو واتساب وهنرد عليك بأسرع وقت." },
+    { title: "تنفيذ منظم", text: "معاينة وتحديد احتياجك قبل البدء، وتنفيذ مرتب." },
+    { title: "لكل الناس", text: "نخدم البيوت والمحلات والمكاتب." }
+  ],
 
-/* ---------- Modal with zoom / pan ---------- */
-const modal=document.getElementById('modal'),stage=document.getElementById('stage'),vp=document.getElementById('viewport'),cap=document.getElementById('cap'),zl=document.getElementById('zl');
-let s=1,x=0,y=0,drag=null;
-const apply=()=>{stage.style.transform=`translate(${x}px,${y}px) scale(${s})`;zl.textContent=Math.round(s*100)+'%'};
-const reset=()=>{s=1;x=0;y=0;apply()};
-function zoomAt(f,px=0,py=0){const ns=Math.min(12,Math.max(.3,s*f)),r=ns/s;x=px-(px-x)*r;y=py-(py-y)*r;s=ns;apply()}
-function openModal(i){stage.innerHTML=svgs[i];cap.textContent='الشعار رقم '+(i+1)+' — '+L[i][0];reset();modal.classList.add('open');document.body.style.overflow='hidden'}
-function closeModal(){modal.classList.remove('open');stage.innerHTML='';document.body.style.overflow=''}
-grid.addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openModal(+c.dataset.i)});
-grid.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const c=e.target.closest('.card');if(c){e.preventDefault();openModal(+c.dataset.i)}}});
-document.getElementById('zin').onclick=()=>zoomAt(1.25);
-document.getElementById('zout').onclick=()=>zoomAt(1/1.25);
-document.getElementById('zreset').onclick=reset;
-document.getElementById('zclose').onclick=closeModal;
-vp.addEventListener('wheel',e=>{e.preventDefault();const r=vp.getBoundingClientRect();zoomAt(e.deltaY<0?1.15:1/1.15,e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2))},{passive:false});
-vp.addEventListener('pointerdown',e=>{drag={px:e.clientX,py:e.clientY,x,y};vp.classList.add('drag');vp.setPointerCapture(e.pointerId)});
-vp.addEventListener('pointermove',e=>{if(!drag)return;x=drag.x+(e.clientX-drag.px);y=drag.y+(e.clientY-drag.py);apply()});
-const endDrag=()=>{drag=null;vp.classList.remove('drag')};
-vp.addEventListener('pointerup',endDrag);vp.addEventListener('pointercancel',endDrag);
-vp.addEventListener('dblclick',reset);
-document.addEventListener('keydown',e=>{
-  if(!modal.classList.contains('open'))return;
-  if(e.key==='Escape')closeModal();
-  else if(e.key==='+'||e.key==='=')zoomAt(1.25);
-  else if(e.key==='-'||e.key==='_')zoomAt(1/1.25);
-  else if(e.key==='0')reset();
-});
+  // 🟢 خطوات العمل
+  steps: [
+    { title: "تواصل معنا", text: "اتصل أو ابعتلنا على واتساب واحكي لنا احتياجك." },
+    { title: "معاينة وتحديد", text: "نفهم المطلوب ونحدد الخدمة المناسبة." },
+    { title: "التنفيذ", text: "فريق متخصص ينفذ الشغل بعناية." },
+    { title: "المتابعة", text: "نتأكد إن كل حاجة شغالة زي ما تحب." }
+  ],
+
+  // 🟢 الأسئلة الشائعة
+  faq: [
+    { q: "كل قد إيه أعمل صيانة للتكييف؟", a: "يفضّل مرة على الأقل في السنة وقبل موسم الصيف، ومع الاستخدام الكتير كل ٦ شهور." },
+    { q: "إمتى لازم أتصل بكم؟", a: "لو التبريد ضعيف، أو فيه صوت غريب، أو تنقيط مياه، أو الجهاز بيفصل لوحده." },
+    { q: "بتخدموا فين؟", a: "كلمنا على واتساب أو اتصل وقولنا منطقتك ونأكدلك." },
+    { q: "إزاي أحجز خدمة؟", a: "اضغط احجز على واتساب أو املأ نموذج الطلب في الموقع، وهنرد عليك." }
+  ]
+};
 </script>
+
+<!-- ═══════════ لا تعدّل: من هنا الكود اللي بيبني الموقع ═══════════ -->
+<script>
+(function(){
+  var C = CONFIG, $ = function(s,r){return (r||document).querySelector(s)}, $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var LOGO = '<path d="M 0,0 L 160,57 L 160,200 C 160,300 90,370 0,390 C -90,370 -160,300 -160,200 L -160,57 Z" fill="none" stroke="#1F4E45" stroke-width="14" stroke-linejoin="round"/><rect x="-87" y="106" width="175" height="78" rx="20" fill="#1F4E45"/><circle cx="60" cy="129" r="5.5" fill="#B08D57"/><line x1="-75" y1="154" x2="76" y2="154" stroke="#F3F0E8" stroke-width="4.5" stroke-linecap="round"/><line x1="-70" y1="167" x2="70" y2="167" stroke="#B08D57" stroke-width="8" stroke-linecap="round"/><path d="M -84,250 q 21,-26 42,0 t 42,0 t 42,0 t 42,0" fill="none" stroke="#B08D57" stroke-width="12" stroke-linecap="round"/><path d="M -66,304 q 16.5,-22 33,0 t 33,0 t 33,0 t 33,0" fill="none" stroke="#B08D57" stroke-width="12" stroke-linecap="round"/>';
+  var LOGO_LIGHT = LOGO.replace(/#1F4E45/g,'#F3F0E8');   // لوجو فاتح للخلفيات الغامقة
+  var ICONS = {
+    wrench:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.700 6.300 21l6.300-6.300a4 4 0 0 0 5.100-5.400l-2.700 2.700-2.400-.6-.6-2.400z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
+    install:'<rect x="3" y="4" width="18" height="8" rx="2.500" fill="none" stroke="currentColor" stroke-width="1.800"/><path d="M7 8h10M6 16c1.500-1.500 3-1.500 4.500 0s3 1.500 4.500 0M8 20c1-1 2-1 3 0s2 1 3 0" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round"/>',
+    box:'<path d="M3 7.500 12 3l9 4.500v9L12 21l-9-4.500z M3 7.500l9 4.500 9-4.500M12 12v9" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/>',
+    pipe:'<path d="M3 9h6a3 3 0 0 1 3 3v0a3 3 0 0 0 3 3h6M3 9v0M21 15v0M5 6v6M19 12v6" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/>'
+  };
+  function waLink(msg){
+    var n = String(C.whatsapp||"").replace(/\D/g,"");
+    if (n.indexOf("00")===0) n = n.slice(2);
+    if (n.charAt(0)==="0") n = "20"+n.slice(1);
+    return "https://wa.me/"+n+(msg?"?text="+encodeURIComponent(msg):"");
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+  document.title = C.name;
+  $$("[data-name]").forEach(function(e){e.textContent = C.name});
+  $$("[data-en]").forEach(function(e){e.textContent = C.en||""; e.hidden = !C.en});
+  $$("[data-year]").forEach(function(e){e.textContent = new Date().getFullYear()});
+  $$("svg[data-logo]").forEach(function(s){ s.innerHTML = s.closest("footer") ? LOGO_LIGHT : LOGO });
+  $("[data-hero-title]").innerHTML = C.heroTitle;
+  $("[data-hero-sub]").textContent = C.heroSub;
+  $("[data-chips]").innerHTML = (C.chips||[]).map(function(c){return "<span>"+esc(c)+"</span>"}).join("");
+
+  // واتساب والاتصال
+  $$("[data-wa]").forEach(function(a){ if(a.id!=="fSend") a.href = waLink(C.whatsappMsg) });
+  var first = (C.phones||[])[0];
+  $$("[data-call]").forEach(function(a){ if(first){ a.href = "tel:"+String(first).replace(/\D/g,""); } else a.hidden = true });
+
+  // الخدمات
+  $("[data-services]").innerHTML = (C.services||[]).map(function(s){
+    return '<article class="svc"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[s.icon]||ICONS.wrench)+'</svg></div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p><ul>'+(s.points||[]).map(function(p){return "<li>"+esc(p)+"</li>"}).join("")+'</ul></article>';
+  }).join("");
+  $("[data-why]").innerHTML = (C.why||[]).map(function(w){return '<div><h3>'+esc(w.title)+'</h3><p>'+esc(w.text)+'</p></div>'}).join("");
+  $("[data-steps]").innerHTML = (C.steps||[]).map(function(s){return '<li><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></li>'}).join("");
+  $("[data-faq]").innerHTML = (C.faq||[]).map(function(f){return '<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>'}).join("");
+
+  // الأرقام
+  $("[data-phones]").innerHTML = (C.phones||[]).map(function(p){
+    var d = String(p).replace(/\D/g,"");
+    return '<div class="phone-row"><span class="num">'+esc(p)+'</span><a class="btn ghost" href="tel:'+d+'">اتصل</a></div>';
+  }).join("") + '<div class="phone-row"><span>أو ابعتلنا مباشرة</span><a class="btn" href="'+waLink(C.whatsappMsg)+'" target="_blank" rel="noopener">واتساب</a></div>';
+
+  // بيانات المركز
+  var info = [];
+  if (C.address) info.push("<p><b>العنوان:</b><span>"+esc(C.address)+"</span></p>");
+  if (C.hours)   info.push("<p><b>المواعيد:</b><span>"+esc(C.hours)+"</span></p>");
+  if (C.areas)   info.push("<p><b>مناطق الخدمة:</b><span>"+esc(C.areas)+"</span></p>");
+  if (C.mapUrl)  info.push('<p><b>الموقع:</b><a href="'+esc(C.mapUrl)+'" target="_blank" rel="noopener">افتح على الخريطة</a></p>');
+  if (!info.length) info.push("<p>كلمنا على الأرقام وهنوصلك بالتفاصيل.</p>");
+  $("[data-info]").innerHTML = info.join("");
+
+  // السوشيال: أيقونات في الفوتر بهوية المركز
+  var G = 'fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  var SOC = [
+    ["facebook","Facebook",function(u){return "https://www.facebook.com/"+u},'<path '+G+' d="M14.500 21v-8h2.600l.5-3.200h-3.100V8c0-1 .4-1.700 1.800-1.700h1.400V3.500c-.3 0-1.300-.2-2.400-.2-2.500 0-4.100 1.500-4.100 4.200v2.300H8.500V13h2.700v8z"/>'],
+    ["instagram","Instagram",function(u){return "https://www.instagram.com/"+u},'<rect '+G+' x="3.500" y="3.500" width="17" height="17" rx="5"/><circle '+G+' cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.100" fill="currentColor"/>'],
+    ["tiktok","TikTok",function(u){return "https://www.tiktok.com/@"+u},'<path '+G+' d="M14 3.500v11a3.800 3.800 0 1 1-3.800-3.800M14 3.500c.4 2.600 2 4.300 4.800 4.600"/>'],
+    ["youtube","YouTube",function(u){return "https://www.youtube.com/@"+u},'<rect '+G+' x="2.500" y="5.500" width="19" height="13" rx="4"/><path d="M10.200 9.300v5.400l4.700-2.700z" fill="currentColor"/>'],
+    ["whatsappChannel","واتساب",function(u){return "https://whatsapp.com/channel/"+u},'<path '+G+' d="M12 3a9 9 0 0 0-7.700 13.600L3 21l4.500-1.200A9 9 0 1 0 12 3z"/><path '+G+' d="M9 8.500c0 3.500 3 6.500 6.500 6.500l1-1.500-2-1-.8.800c-1-.4-1.900-1.300-2.300-2.300l.8-.8-1-2z"/>'],
+    ["telegram","Telegram",function(u){return "https://t.me/"+u},'<path '+G+' d="M21 4 3 11.200l5.500 2L10.500 20l3.200-3.800 4.800 3.500zM8.500 13.200 21 4"/>'],
+    ["x","X",function(u){return "https://x.com/"+u},'<path '+G+' d="M5 4l14 16M19 4 5 20"/>'],
+    ["snapchat","Snapchat",function(u){return "https://www.snapchat.com/add/"+u},'<path '+G+' d="M12 3.500c3 0 4.500 2.100 4.500 4.800v2c.5.800 1.500 1 2.500 1.200-.3.800-1 1-2 1.300.5 1 1.200 1.500 2 1.800-1 1.200-2.500 1-3.500 1.200-.5.800-1.300 1.700-3.500 1.700s-3-.9-3.500-1.700c-1-.2-2.500 0-3.500-1.200.8-.3 1.500-.8 2-1.800-1-.3-1.700-.5-2-1.300 1-.2 2-.4 2.500-1.200v-2C7.500 5.600 9 3.500 12 3.500z"/>'],
+    ["linkedin","LinkedIn",function(u){return "https://www.linkedin.com/company/"+u},'<path '+G+' d="M6.500 10v8M10.500 18v-8M10.500 13c0-2 1.400-3.200 3-3.200s3 1.100 3 3.200v5"/><circle cx="6.500" cy="6.500" r="1.200" fill="currentColor"/>']
+  ];
+  var socOut = "";
+  SOC.forEach(function(x){
+    var v = String((C.social||{})[x[0]]||"").trim();
+    var svg = '<svg viewBox="0 0 24 24" aria-hidden="true">'+x[3]+'</svg>';
+    if (!v) { if (C.showEmptySocial) socOut += '<span title="'+x[1]+'" aria-label="'+x[1]+'">'+svg+'</span>'; return; }
+    if (!/^https?:\/\//i.test(v)) v = /^(www\.)?[a-z0-9-]+\.[a-z]{2,}\//i.test(v) ? "https://"+v : x[2](v.replace(/^@/,""));
+    socOut += '<a href="'+esc(v)+'" target="_blank" rel="noopener" title="'+x[1]+'" aria-label="'+x[1]+'">'+svg+'</a>';
+  });
+  var fs = $("[data-foot-socials]"); fs.innerHTML = socOut; fs.parentNode.hidden = !socOut;
+
+  // نموذج الطلب
+  var sel = $("#fSvc");
+  sel.innerHTML = (C.services||[]).map(function(s){return "<option>"+esc(s.title)+"</option>"}).join("") + "<option>خدمة أخرى</option>";
+  function build(){
+    var n = $("#fName").value.trim(), a = $("#fArea").value.trim(), t = $("#fNote").value.trim();
+    var m = "السلام عليكم" + (n ? "، أنا "+n : "") + ".\nعايز خدمة: "+sel.value + (a ? "\nالمنطقة/العنوان: "+a : "") + (t ? "\nتفاصيل: "+t : "");
+    $("#fSend").href = waLink(m);
+  }
+  ["fName","fSvc","fArea","fNote"].forEach(function(id){ $("#"+id).addEventListener("input", build); $("#"+id).addEventListener("change", build) });
+  build();
+})();
+</script>
+
 </body>
 </html>

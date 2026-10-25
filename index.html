@@ -131,6 +131,21 @@ section.sec{padding-block:72px}
 .more strong{font-size:1.15rem;font-weight:800}
 .more .btn{background:var(--brand-ink);border-color:var(--brand-ink);color:var(--brand)}
 
+/* منتجاتنا */
+.shop{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:980px){.shop{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.shop{gap:12px}}
+.prod{background:var(--bg);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.prod .ph{aspect-ratio:1/1;background:#F3F0E8;display:block;width:100%;max-width:100%;height:auto;object-fit:cover}
+.prod .bd{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod h3{font-size:1.12rem;font-weight:800}
+.prod p{color:var(--muted);font-size:.92rem;line-height:1.7;flex:1}
+.prod .price{display:inline-flex;align-self:flex-start;border-radius:999px;padding:2px 12px;font-weight:800;font-size:.9rem;background:var(--card);color:var(--gold-text)}
+.prod .price.has{background:var(--brand);color:var(--brand-ink);direction:rtl}
+.prod .btn{padding:10px 16px;font-size:.95rem;width:100%}
+@media (max-width:420px){.prod .bd{padding:12px}.prod h3{font-size:1rem}.prod p{font-size:.85rem}.prod .btn{font-size:.88rem;padding:9px 10px}}
+.shop-note{margin-top:16px;color:var(--muted);font-size:.95rem}
+
 /* لماذا نحن */
 .why{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface)}
 .why div{padding:26px 22px;border-inline-start:1px solid var(--line);min-width:0}
@@ -208,7 +223,7 @@ footer.foot small{opacity:.8}
       <span data-name></span>
     </a>
     <nav class="menu" aria-label="التنقل">
-      <a href="#services">الخدمات</a><a href="#why">لماذا نحن</a><a href="#steps">خطوات العمل</a><a href="#request">اطلب خدمتك</a><a href="#faq">أسئلة شائعة</a><a href="#contact">تواصل معنا</a>
+      <a href="#services">الخدمات</a><a href="#shop">منتجاتنا</a><a href="#why">لماذا نحن</a><a href="#steps">خطوات العمل</a><a href="#request">اطلب خدمتك</a><a href="#faq">أسئلة شائعة</a><a href="#contact">تواصل معنا</a>
     </nav>
     <div class="top-actions">
       <a class="btn" data-wa href="#" target="_blank" rel="noopener">احجز الآن</a>
@@ -247,19 +262,27 @@ footer.foot small{opacity:.8}
   <div class="more"><strong>محتاج خدمة تانية في التكييف؟ كلمنا وهنفيدك.</strong><a class="btn" data-wa href="#" target="_blank" rel="noopener">اسأل على واتساب</a></div>
 </section>
 
-<section class="sec alt" id="why">
+<section class="sec alt" id="shop">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">منتجاتنا</div><h2>اشتري منتجاتنا</h2><p>إكسسوارات بتحمي تكييفك وتطوّل عمره. اختار المنتج واضغط «اطلب على واتساب».</p></div>
+    <div class="shop" data-products></div>
+    <p class="shop-note">الصور توضيحية، وممكن الشكل أو اللون يختلف حسب المتاح. اسألنا على واتساب عن المقاسات والأسعار.</p>
+  </div>
+</section>
+
+<section class="sec" id="why">
   <div class="wrap">
     <div class="sec-head"><div class="kicker">لماذا مركز أكتوبر</div><h2>خدمة شاملة وتعامل واضح</h2></div>
     <div class="why" data-why></div>
   </div>
 </section>
 
-<section class="sec" id="steps">
+<section class="sec alt" id="steps">
   <div class="sec-head"><div class="kicker">خطوات العمل</div><h2>إزاي بنخدمك؟</h2><p>أربع خطوات بسيطة من أول مكالمة لحد التنفيذ.</p></div>
   <ol class="steps" data-steps></ol>
 </section>
 
-<section class="sec alt" id="request">
+<section class="sec" id="request">
   <div class="wrap req">
     <div class="sec-head" style="margin:0"><div class="kicker">اطلب خدمتك</div><h2>اكتب طلبك وهيوصلنا على واتساب</h2><p>املأ البيانات دي واضغط الزرار، هتفتح لك رسالة جاهزة على واتساب نستلمها ونرد عليك.</p></div>
     <form class="form" id="reqForm" onsubmit="return false">
@@ -275,12 +298,12 @@ footer.foot small{opacity:.8}
   </div>
 </section>
 
-<section class="sec" id="faq">
+<section class="sec alt" id="faq">
   <div class="sec-head"><div class="kicker">أسئلة شائعة</div><h2>إجابات سريعة</h2></div>
   <div class="faq" data-faq></div>
 </section>
 
-<section class="sec alt" id="contact">
+<section class="sec" id="contact">
   <div class="wrap">
     <div class="sec-head"><div class="kicker">تواصل معنا</div><h2>إحنا في خدمتك</h2></div>
     <div class="contact">
@@ -357,6 +380,19 @@ const CONFIG = {
       points: ["تأسيس مواسير النحاس", "تمديدات التصريف", "تنسيق مع مرحلة التشطيب"] }
   ],
 
+  // 🟢 منتجاتنا (كل بلوك = كارت في قسم «اشتري منتجاتنا»)
+  // img: مسار الصورة جوه فولدر «المنتجات» | price: اكتب السعر بالجنيه (مثال: "250") أو سيبه "" يظهر «اسأل عن السعر»
+  products: [
+    { name: "كفر ريموت التكييف",     text: "جراب سيليكون بيحمي الريموت من الوقعات والتراب والمية.",            img: "المنتجات/كفر-ريموت-التكييف.png",     price: "" },
+    { name: "كفر الوحدة الداخلية",   text: "غطا بيحمي الوحدة الداخلية من التراب وقت ما التكييف مقفول.",        img: "المنتجات/كفر-الوحدة-الداخلية.png",   price: "" },
+    { name: "كفر الوحدة الخارجية",   text: "غطا ضد المية والشمس بيحمي الوحدة الخارجية من التراب والمطر.",      img: "المنتجات/كفر-الوحدة-الخارجية.png",   price: "" },
+    { name: "ريموت تكييف يونيفرسال", text: "ريموت بديل بيشتغل مع أغلب أنواع التكييفات.",                       img: "المنتجات/ريموت-تكييف-يونيفرسال.png", price: "" },
+    { name: "حامل الوحدة الخارجية",  text: "شاسيه حديد مدهون ضد الصدأ لتثبيت الوحدة الخارجية على الحيطة.",     img: "المنتجات/حامل-الوحدة-الخارجية.png",  price: "" },
+    { name: "حامي جهد للتكييف",      text: "بيحمي التكييف من ارتفاع وانخفاض الكهربا المفاجئ.",                 img: "المنتجات/حامي-جهد-التكييف.png",      price: "" },
+    { name: "فلاتر تكييف",           text: "فلاتر بديلة للوحدة الداخلية لهوا أنضف وتبريد أحسن.",               img: "المنتجات/فلاتر-التكييف.png",         price: "" },
+    { name: "خرطوم صرف التكييف",     text: "خرطوم مرن لتصريف مية التكييف من غير تنقيط.",                      img: "المنتجات/خرطوم-صرف-التكييف.png",     price: "" }
+  ],
+
   // 🟢 لماذا نحن
   why: [
     { title: "خدمة شاملة", text: "من تأسيس المواسير للصيانة، كل خدمات التكييف عند جهة واحدة." },
@@ -421,6 +457,20 @@ const CONFIG = {
   $("[data-services]").innerHTML = (C.services||[]).map(function(s){
     return '<article class="svc"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[s.icon]||ICONS.wrench)+'</svg></div><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p><ul>'+(s.points||[]).map(function(p){return "<li>"+esc(p)+"</li>"}).join("")+'</ul></article>';
   }).join("");
+  // منتجاتنا
+  var shopEl = $("[data-products]");
+  if (shopEl) {
+    var prods = C.products || [];
+    shopEl.innerHTML = prods.map(function(p){
+      var msg = "السلام عليكم، عايز أطلب: " + p.name;
+      var pr = String(p.price||"").trim();
+      return '<article class="prod"><img class="ph" src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy" width="600" height="600">'+
+        '<div class="bd"><h3>'+esc(p.name)+'</h3><p>'+esc(p.text)+'</p>'+
+        (pr ? '<span class="price has">'+esc(pr)+' جنيه</span>' : '<span class="price">اسأل عن السعر</span>')+
+        '<a class="btn" href="'+waLink(msg)+'" target="_blank" rel="noopener">اطلب على واتساب</a></div></article>';
+    }).join("");
+    shopEl.closest("section").hidden = !prods.length;
+  }
   $("[data-why]").innerHTML = (C.why||[]).map(function(w){return '<div><h3>'+esc(w.title)+'</h3><p>'+esc(w.text)+'</p></div>'}).join("");
   $("[data-steps]").innerHTML = (C.steps||[]).map(function(s){return '<li><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></li>'}).join("");
   $("[data-faq]").innerHTML = (C.faq||[]).map(function(f){return '<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>'}).join("");
